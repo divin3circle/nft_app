@@ -19,13 +19,13 @@ export default {
 };
 
 export const appColors = {
-  light: {
+  app: {
     theme: "#191819",
-    themeEnd: "#212121",
+    themeEnd: "#252524",
     button: "#767677",
     buttonEnd: "#242424",
     primary: "#feb423",
     primaryEnd: "#fec52e",
+    text: "#fafafb",
   },
-  dark: {},
 };
