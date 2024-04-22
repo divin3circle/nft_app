@@ -9,15 +9,10 @@ import {
 } from "react-native";
 import React from "react";
 import { appColors } from "../constants/Colors";
-import { Dimensions } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Link, useNavigation } from "expo-router";
 
 const AuthScreen = () => {
-  const screenWidth = Dimensions.get("window").width;
-  const screenHeight = Dimensions.get("window").height;
-  const navigate = useNavigation();
-
   return (
     <LinearGradient
       colors={[appColors.app.theme, appColors.app.themeEnd]}
@@ -102,33 +97,38 @@ const AuthScreen = () => {
               paddingHorizontal: 20,
             }}
           >
-            <Link href="/(tabs)" asChild>
-              <LinearGradient
-                colors={[appColors.app.button, appColors.app.buttonEnd]}
-                style={{
-                  backgroundColor: appColors.app.button,
-                  padding: 10,
-                  borderRadius: 50,
-                  paddingHorizontal: 30,
-                  marginHorizontal: 10,
-                  paddingVertical: 20,
-                }}
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-              >
-                <Text
+            <Pressable onPress={() => console.warn("clicked")}>
+              <Link href="/home" asChild>
+                <LinearGradient
+                  colors={[appColors.app.button, appColors.app.buttonEnd]}
                   style={{
-                    textAlign: "center",
-                    color: appColors.app.text,
-                    fontFamily: "SpaceMono",
-                    fontSize: 20,
+                    backgroundColor: appColors.app.button,
+                    padding: 10,
+                    borderRadius: 50,
+                    paddingHorizontal: 30,
+                    marginHorizontal: 10,
+                    paddingVertical: 20,
                   }}
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 0 }}
                 >
-                  G
-                </Text>
-              </LinearGradient>
-            </Link>
-            <Link href="/(tabs)" asChild>
+                  <Link href="/home" asChild>
+                    <Text
+                      style={{
+                        textAlign: "center",
+                        color: appColors.app.text,
+                        fontFamily: "SpaceMono",
+                        fontSize: 20,
+                      }}
+                    >
+                      G
+                    </Text>
+                  </Link>
+                </LinearGradient>
+              </Link>
+            </Pressable>
+
+            <Link href="/home" asChild>
               <LinearGradient
                 colors={[appColors.app.button, appColors.app.buttonEnd]}
                 style={{
@@ -142,16 +142,18 @@ const AuthScreen = () => {
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 0 }}
               >
-                <Text
-                  style={{
-                    textAlign: "center",
-                    color: appColors.app.text,
-                    fontFamily: "SpaceMono",
-                    fontSize: 20,
-                  }}
-                >
-                  Sign In
-                </Text>
+                <Link href="/home" asChild>
+                  <Text
+                    style={{
+                      textAlign: "center",
+                      color: appColors.app.text,
+                      fontFamily: "SpaceMono",
+                      fontSize: 20,
+                    }}
+                  >
+                    Sign In
+                  </Text>
+                </Link>
               </LinearGradient>
             </Link>
           </View>
