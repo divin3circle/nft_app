@@ -16,6 +16,7 @@ import { Entypo } from "@expo/vector-icons";
 import { FlashList } from "@shopify/flash-list";
 import { filters } from "./utils/Data";
 import { Ionicons } from "@expo/vector-icons";
+import { Select } from "native-base";
 
 function FilterItem({
   item,
@@ -62,6 +63,7 @@ const Home = () => {
   const [selectedFilter, setSelectedFilter] = React.useState(1);
   const flatListRef = React.useRef<FlatList | null>(null);
   const [selectedItemIndex, setSelectedItemIndex] = React.useState(0);
+  const [period, setPeriod] = React.useState<string>("");
 
   const handleFilter = (id: number, index: number) => {
     setSelectedFilter(id);
@@ -199,11 +201,12 @@ const Home = () => {
             // estimatedItemSize={157}
             horizontal
             showsHorizontalScrollIndicator={false}
-            getItemLayout={(data, index) => ({
-              length: 8,
-              offset: 8 * index,
-              index,
-            }) // replace ITEM_SIZE with your item size
+            getItemLayout={
+              (data, index) => ({
+                length: 8,
+                offset: 8 * index,
+                index,
+              }) // replace ITEM_SIZE with your item size
             }
           />
         </View>
