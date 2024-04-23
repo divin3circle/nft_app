@@ -3,20 +3,21 @@ import {
   StyleSheet,
   Text,
   View,
+  Image,
   StatusBar,
   TextInput,
   Pressable,
   TouchableOpacity,
   FlatList,
+  ScrollView,
 } from "react-native";
 import React, { useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { appColors } from "@/constants/Colors";
 import { Entypo } from "@expo/vector-icons";
-import { FlashList } from "@shopify/flash-list";
-import { filters } from "./utils/Data";
+import { filters, TNFT, nfts } from "./utils/Data";
 import { Ionicons } from "@expo/vector-icons";
-import { Select } from "native-base";
+import { BlurView } from "expo-blur";
 
 function FilterItem({
   item,
@@ -56,6 +57,132 @@ function FilterItem({
         {item.name}
       </Text>
     </LinearGradient>
+  );
+}
+
+function NFT({ nft }: { nft: TNFT }) {
+  return (
+    <View
+      style={{
+        marginVertical: 20,
+        position: "relative",
+        alignItems: "center",
+        shadowColor: appColors.app.primary,
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.4,
+        shadowRadius: 3.84,
+        elevation: 5,
+      }}
+    >
+      <Image
+        source={nft.nft_image}
+        style={{
+          width: 400,
+          height: 400,
+          borderRadius: 20,
+        }}
+      />
+      <View
+        style={{
+          position: "absolute",
+          top: 10,
+          right: 10,
+          borderRadius: 40,
+          overflow: "hidden",
+          width: 80,
+          height: 80,
+        }}
+      >
+        <BlurView
+          intensity={40}
+          tint="light"
+          style={{
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontSize: 50,
+            }}
+          >
+            🔥
+          </Text>
+        </BlurView>
+      </View>
+      <LinearGradient
+        colors={[appColors.app.button, appColors.app.buttonEnd]}
+        start={{ x: 0.1, y: 0.1 }}
+        end={{ x: 1, y: 1 }}
+        style={{
+          position: "absolute",
+          bottom: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          gap: 10,
+          alignItems: "center",
+          width: "90%",
+          padding: 10,
+          borderRadius: 10,
+        }}
+      >
+        <Pressable
+          style={{
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "SpaceMono",
+              fontSize: 20,
+              color: appColors.app.text,
+            }}
+          >
+            {nft.name}
+          </Text>
+          <Text
+            style={{
+              fontFamily: "SpaceMono",
+              fontSize: 14,
+              color: appColors.app.text,
+            }}
+          >
+            @{nft.creator}
+          </Text>
+        </Pressable>
+        <LinearGradient
+          colors={[appColors.app.primary, appColors.app.primaryEnd]}
+          start={{ x: 0.1, y: 0.1 }}
+          end={{ x: 1, y: 1 }}
+          style={{
+            backgroundColor: appColors.app.primary,
+            height: "120%",
+            paddingHorizontal: 10,
+            paddingVertical: 20,
+            borderRadius: 10,
+            justifyContent: "center",
+          }}
+        >
+          <Text
+            style={{
+              fontFamily: "SpaceMono",
+              fontSize: 14,
+              textAlign: "center",
+              color: appColors.app.buttonEnd,
+            }}
+          >
+            View Collections
+          </Text>
+        </LinearGradient>
+      </LinearGradient>
+    </View>
   );
 }
 
@@ -253,7 +380,11 @@ const Home = () => {
           </Pressable>
         </View>
         {/* nfts */}
-        <View></View>
+        <ScrollView>
+          {nfts.map((nft) => (
+            <NFT key={nft.id} nft={nft} />
+          ))}
+        </ScrollView>
       </SafeAreaView>
     </LinearGradient>
   );

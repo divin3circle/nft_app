@@ -25,7 +25,7 @@ export const appColors = {
     button: "#767677",
     buttonEnd: "#242424",
     primary: "#feb423",
-    primaryEnd: "#fec52e",
+    primaryEnd: "#FFE18D",
     text: "#fafafb",
   },
 };
