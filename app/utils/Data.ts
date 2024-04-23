@@ -108,7 +108,7 @@ const nfts = [
   },
   {
     id: 4,
-    name: "Pudgy Penguins",
+    name: "Penguins",
     price: 0.2,
     creator: "Pudgy Penguins",
     creator_address: "0xqwe2j5cseqrs714uq",
