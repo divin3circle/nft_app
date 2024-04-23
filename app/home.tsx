@@ -41,7 +41,7 @@ function FilterItem({
         borderRadius: 25,
         justifyContent: "center",
         alignItems: "center",
-        padding: 5,
+        padding: 10,
         marginHorizontal: 5,
       }}
     >
@@ -182,8 +182,8 @@ const Home = () => {
         {/* filters */}
         <View
           style={{
-            marginVertical: 20,
-            height: 30,
+            marginTop: 20,
+            height: 60,
           }}
         >
           <FlatList
