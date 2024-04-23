@@ -62,7 +62,7 @@ const AuthScreen = () => {
             </Text>{" "}
             Art
           </Text>
-          <Text style={styles.text}>Collections</Text>
+          <Text style={styles.text}>& Collections</Text>
         </View>
       </View>
       {/* mascot */}
@@ -97,7 +97,7 @@ const AuthScreen = () => {
               paddingHorizontal: 20,
             }}
           >
-            <Pressable onPress={() => console.warn("clicked")}>
+            <Pressable>
               <Link href="/home" asChild>
                 <LinearGradient
                   colors={[appColors.app.button, appColors.app.buttonEnd]}
