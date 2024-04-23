@@ -67,14 +67,14 @@ function NFT({ nft }: { nft: TNFT }) {
         marginVertical: 20,
         position: "relative",
         alignItems: "center",
-        shadowColor: appColors.app.primary,
-        shadowOffset: {
-          width: 0,
-          height: 2,
-        },
-        shadowOpacity: 0.4,
-        shadowRadius: 3.84,
-        elevation: 5,
+        // shadowColor: appColors.app.primary,
+        // shadowOffset: {
+        //   width: 0,
+        //   height: 2,
+        // },
+        // shadowOpacity: 0.4,
+        // shadowRadius: 3.84,
+        // elevation: 5,
       }}
     >
       <Image
@@ -121,12 +121,12 @@ function NFT({ nft }: { nft: TNFT }) {
         end={{ x: 1, y: 1 }}
         style={{
           position: "absolute",
-          bottom: 10,
+          bottom: 20,
           flexDirection: "row",
           justifyContent: "space-between",
           gap: 10,
           alignItems: "center",
-          width: "90%",
+          width: "79%",
           padding: 10,
           borderRadius: 10,
         }}
@@ -345,6 +345,7 @@ const Home = () => {
             justifyContent: "space-between",
             alignItems: "center",
             paddingHorizontal: 20,
+            marginBottom: 5,
           }}
         >
           <Text
