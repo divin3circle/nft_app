@@ -52,7 +52,7 @@ const NFTDetails = () => {
           <View
             style={{
               position: "absolute",
-              top: 20,
+              top: 0,
               flexDirection: "row",
               justifyContent: "space-between",
               alignItems: "center",
@@ -86,7 +86,7 @@ const NFTDetails = () => {
                   <Ionicons
                     name="arrow-back"
                     size={27}
-                    color={appColors.app.button}
+                    color={appColors.app.text}
                   />
                 </Link>
               </BlurView>
