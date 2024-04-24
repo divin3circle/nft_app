@@ -15,7 +15,7 @@ import React, { useEffect } from "react";
 import { LinearGradient } from "expo-linear-gradient";
 import { appColors } from "@/constants/Colors";
 import { Entypo } from "@expo/vector-icons";
-import { filters, TNFT, nfts } from "./utils/Data";
+import { filters, TNFT, nfts } from "../utils/Data";
 import { Ionicons } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 
@@ -80,8 +80,8 @@ function NFT({ nft }: { nft: TNFT }) {
       <Image
         source={nft.nft_image}
         style={{
-          width: 400,
-          height: 400,
+          width: 350,
+          height: 350,
           borderRadius: 20,
         }}
       />
@@ -126,9 +126,10 @@ function NFT({ nft }: { nft: TNFT }) {
           justifyContent: "space-between",
           gap: 10,
           alignItems: "center",
-          width: "79%",
-          padding: 10,
+          width: "88%",
           borderRadius: 10,
+          paddingHorizontal: 15,
+          paddingVertical: 10,
         }}
       >
         <Pressable
@@ -136,12 +137,13 @@ function NFT({ nft }: { nft: TNFT }) {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            width: "45%",
           }}
         >
           <Text
             style={{
               fontFamily: "SpaceMono",
-              fontSize: 20,
+              fontSize: 18,
               color: appColors.app.text,
             }}
           >
@@ -150,7 +152,7 @@ function NFT({ nft }: { nft: TNFT }) {
           <Text
             style={{
               fontFamily: "SpaceMono",
-              fontSize: 14,
+              fontSize: 11,
               color: appColors.app.text,
             }}
           >
@@ -163,17 +165,19 @@ function NFT({ nft }: { nft: TNFT }) {
           end={{ x: 1, y: 1 }}
           style={{
             backgroundColor: appColors.app.primary,
-            height: "120%",
+            height: "110%",
             paddingHorizontal: 10,
             paddingVertical: 20,
             borderRadius: 10,
             justifyContent: "center",
+            marginVertical: 5,
+            width: "55%",
           }}
         >
           <Text
             style={{
               fontFamily: "SpaceMono",
-              fontSize: 14,
+              fontSize: 11,
               textAlign: "center",
               color: appColors.app.buttonEnd,
             }}
