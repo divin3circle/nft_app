@@ -13,7 +13,7 @@
 
 ### Home Screen
 
-![Home Screen](/assets/readme-items/demo3.png)
+![Home Screen](/assets/readme-items/demo2.png)
 
 ### NFT Screens
 
