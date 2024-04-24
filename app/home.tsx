@@ -18,6 +18,7 @@ import { Entypo } from "@expo/vector-icons";
 import { filters, TNFT, nfts } from "../utils/Data";
 import { Ionicons } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
+import { Link } from "expo-router";
 
 function FilterItem({
   item,
@@ -159,6 +160,7 @@ function NFT({ nft }: { nft: TNFT }) {
             @{nft.creator}
           </Text>
         </Pressable>
+
         <LinearGradient
           colors={[appColors.app.primary, appColors.app.primaryEnd]}
           start={{ x: 0.1, y: 0.1 }}
@@ -174,16 +176,23 @@ function NFT({ nft }: { nft: TNFT }) {
             width: "55%",
           }}
         >
-          <Text
-            style={{
-              fontFamily: "SpaceMono",
-              fontSize: 11,
-              textAlign: "center",
-              color: appColors.app.buttonEnd,
-            }}
+          <Link
+            href={`
+            nfts/${nft.id}
+          `}
+            asChild
           >
-            View Collections
-          </Text>
+            <Text
+              style={{
+                fontFamily: "SpaceMono",
+                fontSize: 11,
+                textAlign: "center",
+                color: appColors.app.buttonEnd,
+              }}
+            >
+              View Collections
+            </Text>
+          </Link>
         </LinearGradient>
       </LinearGradient>
     </View>

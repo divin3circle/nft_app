@@ -64,6 +64,10 @@ function RootLayoutNav() {
           name="home"
           options={{ title: "Home", headerShown: false }}
         />
+        <Stack.Screen
+          name="nfts/[id]"
+          options={{ title: "NFTs", headerShown: false }}
+        />
       </Stack>
     </ThemeProvider>
   );
